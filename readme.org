@@ -17,3 +17,8 @@ dup stdin for each ip list in =hosts.list=
 
 * multiple column
 : ARGS=a.list ./pdo.py echo '$k1 $k2'
+
+* auto ssh passwd
+1. see [[https://linux.die.net/man/1/sshpass][sshpass]]
+2. see also =apass.py= and =yes.py= in this repo which based on =pexect=
+
