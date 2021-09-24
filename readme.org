@@ -1,0 +1,19 @@
+#+Title: pdo
+
+* xargs from file
+: ./pdo.py rsync -avz ~/.ssh @hosts.list:
+
+* dup stdin
+dup stdin for each ip list in =hosts.list=
+: echo date | ./pdo.py ssh -T @hosts.list
+
+* xargs with timeout
+: echo date |timeout=1 ./pdo.py ssh -T root@@hosts.list
+  
+* parallel
+: cat ... | par=10 ./pdo.py ...
+* dryrun
+: cat ... | par=-1 ./pdo.py ...
+
+* multiple column
+: ARGS=a.list ./pdo.py echo '$k1 $k2'
